@@ -1,0 +1,34 @@
+{% extends "site_app/global/base.html" %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+        <div>
+            {% if nome %}
+                <h1> Dados obtidos: </h1>
+                <p>{{nome}} {{email}}</p> 
+            {% endif %}
+    
+            {% if dados %}
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for row in dados %}
+                    <tr>
+                        <td width="27%">{{row.id}}</td>
+                        <td width="27%">{{row.nome}}</td>
+                        <td width="27%">{{row.email}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %} 
+        </div>
+</div>
+{% endblock content %}
+
